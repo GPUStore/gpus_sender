@@ -16,6 +16,8 @@
 
     <properties>
         <java.version>17</java.version>
+        <jsoup.version>1.15.3</jsoup.version>
+        <springframework.boot.version>2.7.5</springframework.boot.version>
     </properties>
 
     <dependencies>
@@ -23,26 +25,38 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+            <version>${springframework.boot.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <version>${springframework.boot.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>RELEASE</version>
+            <version>${springframework.boot.version}</version>
             <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.22</version>
             <scope>compile</scope>
+        </dependency>
+
+<!--        for email -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+            <version>${springframework.boot.version}</version>
         </dependency>
 
     </dependencies>

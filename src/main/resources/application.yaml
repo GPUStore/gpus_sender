@@ -1,0 +1,33 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /gpus/sender
+
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: 2001fktrc@gmail.com #//TODO ???????? ?? ?????? ?????
+    password: "loccrkvhyslyvglg"
+    test-connection: true
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    sender:
+      email: gpustore@gmail.com
+      text: gpu-store
+
+logging:
+  file:
+    name: src/main/resources/application-debug.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  level:
+    org.springframework.web: TRACE
+
+outbound:
+  get-product: "http://localhost:8081/gpus/products/%s" #TODO ????????? ???-?? ???????
