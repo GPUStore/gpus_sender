@@ -21,7 +21,7 @@ import java.nio.file.Path;
 @RequiredArgsConstructor
 public class EmailService {
     private static final String THEME_TEXT = "Снижение цены на продукте [GPUStore]";
-    private static final String PATH_TO_EMAIL_FORMAT = "src/main/resources/email.html";
+    private static final String PATH_TO_EMAIL_FORMAT = "src/main/resources/messages/email.html";
     @Value("${spring.mail.sender.text}")
     private String senderText;
     @Value("${spring.mail.sender.email}")
