@@ -1,0 +1,35 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /gpus/sender
+
+spring:
+  mail:
+    host: smtp.yandex.ru
+    port: 465
+    username: gpussender@yandex.ru
+    password: "tlepetldqmggmbmt"
+    test-connection: true
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+          auth: true
+          starttls:
+            enable: true
+    sender:
+      email: gpussender@yandex.ru
+      text: gpu-store
+
+logging:
+  file:
+    name: src/main/resources/application-debug.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  level:
+    org.springframework.web: TRACE
+
+outbound:
+  get-product: "http://localhost:8081/gpus/products/%s" #TODO ????????? ???-?? ???????
