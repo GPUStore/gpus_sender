@@ -1,0 +1,28 @@
+2022-11-17 09:12:50 [main] INFO  r.m.g.GpusProducerApplicationTests - Starting GpusProducerApplicationTests using Java 17.0.2 on 192.168.1.21 with PID 77394 (started by aleksejagnenkov in /Users/alekseiiagnenkov/IdeaProjects/mephi/gpus/gpus/gpus_sender)
+2022-11-17 09:12:50 [main] INFO  r.m.g.GpusProducerApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2022-11-17 09:12:50 [main] TRACE o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@42a9a63e, started on Thu Nov 17 09:12:50 MSK 2022
+2022-11-17 09:12:50 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=256e53eb-0367-34e7-85ea-e81b0d6efbe6
+2022-11-17 09:12:50 [main] TRACE o.s.w.c.s.GenericWebApplicationContext - No 'messageSource' bean, using [Empty MessageSource]
+2022-11-17 09:12:50 [main] TRACE o.s.w.c.s.GenericWebApplicationContext - No 'applicationEventMulticaster' bean, using [SimpleApplicationEventMulticaster]
+2022-11-17 09:12:50 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-11-17 09:12:50 [main] TRACE o.s.w.s.m.m.a.RequestMappingHandlerMapping - 
+	r.m.g.c.SenderController:
+	{POST [/email]}: sendEmail(Messages)
+2022-11-17 09:12:50 [main] TRACE o.s.w.s.m.m.a.RequestMappingHandlerMapping - 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2022-11-17 09:12:50 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 3 mappings in 'requestMappingHandlerMapping'
+2022-11-17 09:12:50 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping - Detected 0 mappings in 'beanNameHandlerMapping'
+2022-11-17 09:12:50 [main] TRACE o.s.w.s.f.s.RouterFunctionMapping - 0 RouterFunction(s) in 'routerFunctionMapping'
+2022-11-17 09:12:50 [main] TRACE o.s.w.s.h.SimpleUrlHandlerMapping - Mapped [/webjars/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2022-11-17 09:12:50 [main] TRACE o.s.w.s.h.SimpleUrlHandlerMapping - Mapped [/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-11-17 09:12:50 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-11-17 09:12:50 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-11-17 09:12:51 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2022-11-17 09:12:51 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-11-17 09:12:51 [main] TRACE o.s.w.c.s.GenericWebApplicationContext - Using LifecycleProcessor [org.springframework.context.support.DefaultLifecycleProcessor@2bcda694]
+2022-11-17 09:12:51 [main] INFO  r.m.g.GpusProducerApplicationTests - Started GpusProducerApplicationTests in 1.504 seconds (JVM running for 1.88)
+2022-11-17 09:12:51 [SpringApplicationShutdownHook] DEBUG o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@42a9a63e, started on Thu Nov 17 09:12:50 MSK 2022
+2022-11-17 09:12:51 [SpringApplicationShutdownHook] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2022-11-17 09:12:51 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application SENDER with eureka with status DOWN
