@@ -4,15 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Messages {
+public class Client {
 
-    List<Client> clients;
-    String productId;
-    double oldCost;
-    double newCost;
+    private String id;
+    private String email;
 }

@@ -1,7 +1,5 @@
 server:
   port: 0
-  servlet:
-    context-path: /sender
 
 spring:
   application:
@@ -42,4 +40,5 @@ logging:
         web: TRACE
 
 outbound:
-  get-product: "http://localhost:8765/gpus/products/%s" #TODO ????????? ???-?? ???????
+  get-product: "http://localhost:8765/api/products/%s"
+  unsubscribe: "http://localhost:8765/api/clients/unsubscribe/clientId=%s&productId=%s"
