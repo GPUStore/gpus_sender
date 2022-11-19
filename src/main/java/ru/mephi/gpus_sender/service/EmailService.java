@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
+import ru.mephi.gpus_sender.entity.Client;
 import ru.mephi.gpus_sender.entity.Messages;
 
 import javax.mail.MessagingException;
@@ -21,20 +22,25 @@ import java.nio.file.Path;
 @RequiredArgsConstructor
 public class EmailService {
     private static final String THEME_TEXT = "Снижение цены на продукте [GPUStore]";
-    private static final String PATH_TO_EMAIL_FORMAT = "src/main/resources/messages/email.html";
+    private static final String PATH_TO_EMAIL_FORMAT = "gpus_sender/src/main/resources/messages/email.html";
     @Value("${spring.mail.sender.text}")
     private String senderText;
     @Value("${spring.mail.sender.email}")
     private String senderEmail;
     @Value("${outbound.get-product}")
-    private String baseProductLink;
+    private String getProductUrl;
+    @Value("${outbound.unsubscribe}")
+    private String unsubscribeUrl;
     private final JavaMailSender javaMailSender;
 
     public void sendEmail(Messages messages) {
         try {
-            String message = createBaseMessage(messages);
-            for (String email : messages.getEmails()) {
-                send(email, message);
+            String productId = messages.getProductId();
+            double oldCost = messages.getOldCost();
+            double newCost = messages.getNewCost();
+            for (Client client : messages.getClients()) {
+                String message = createMessage(productId, oldCost, newCost, client.getId());
+                send(client.getEmail(), message);
             }
         } catch (MessagingException e) {
             log.error("Error runtime create message!", e);
@@ -45,12 +51,17 @@ public class EmailService {
         }
     }
 
-    private String createBaseMessage(Messages messages) throws IOException {
+    private String createMessage(String productId,
+                                 double oldCost,
+                                 double newCost,
+                                 String clientId) throws IOException {
         return String.format(
                 getFormat(),
-                String.format(baseProductLink, messages.getProductId()),
-                messages.getOldCost(),
-                messages.getNewCost()
+                String.format(getProductUrl, productId),
+                oldCost,
+                newCost,
+                String.format(unsubscribeUrl, clientId, productId),
+                String.format(unsubscribeUrl, clientId, "")
         );
     }
 
