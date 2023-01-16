@@ -19,6 +19,7 @@
 
     <properties>
         <java.version>17</java.version>
+        <telegram-spring.version>0.26</telegram-spring.version>
         <spring-cloud.version>2021.0.5</spring-cloud.version>
     </properties>
 
@@ -48,7 +49,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
-
+        <!--        for telegram -->
+        <dependency>
+            <groupId>com.github.xabgesagtx</groupId>
+            <artifactId>telegram-spring-boot-starter</artifactId>
+            <version>${telegram-spring.version}</version>
+        </dependency>
         <!--        eureka-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

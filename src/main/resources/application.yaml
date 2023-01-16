@@ -21,6 +21,9 @@ spring:
     sender:
       email: gpussender@yandex.ru
       text: gpu-store
+bot:
+  name: GPUSBOT
+  token: 5920318828:AAEoullWEvgXga-yfWLK_Ytox4VtyYcDjow
 
 eureka:
   client:
